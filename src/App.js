@@ -1,5 +1,5 @@
 import './App.css'
-import {BrowserRouter,Route,Routes} from 'react-router-dom'
+import {HashRouter,Route,Routes} from 'react-router-dom'
 import LoginRoute from './components/LoginRoute'
 import NotFoundRoute from './components/NotFoundRoute'
 import Home from './components/Home'
@@ -49,7 +49,7 @@ const salaryRangesList = [
 // Replace your code here
 const App = () => {
   return(
-    <BrowserRouter>
+    <HashRouter>
     <Routes>
         <Route exact path="/" element={<ProtectedRoute><Home/></ProtectedRoute>} />
         <Route exact path="/login" element={<LoginRoute />} />
@@ -57,7 +57,7 @@ const App = () => {
         <Route exact path="/jobs/:id" element={<ProtectedRoute><JobItemDetailsRoute /></ProtectedRoute>} />
         <Route exact path="*" element={<NotFoundRoute />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
  
